@@ -1,0 +1,41 @@
+{
+  "name": "grunt-gt-core-builder",
+  "description": "Builds required modules for Gore Core projects.",
+  "version": "0.1.0",
+  "homepage": "https://GORETEX/grunt-gt-core-builder/grunt-plugin-test",
+  "author": {
+    "name": "Timothy Groves",
+    "email": "groves@greatwhiteark.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/GORETEX/grunt-gt-core-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GORETEX/grunt-gt-core-builder/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/groves/grunt-plugin-test/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
