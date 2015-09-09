@@ -1,6 +1,6 @@
 /*
- * gore-core-builder
- * https://github.com/groves/grunt-plugin-test
+ * grunt-gt-core-builder
+ * https://github.com/GORETEX/grunt-gt-core-builder
  *
  * Copyright (c) 2015 Timothy Groves
  * Licensed under the MIT license.
@@ -10,40 +10,13 @@
 
 module.exports = function(grunt) {
 
-    // Please see the Grunt documentation for more information regarding task
-    // creation: http://gruntjs.com/creating-tasks
-
-    /*
-    'bower_components/gwa-event-dispatcher/dist/Dispatcher.js',
-    'bower_components/colorbox/jquery.colorbox.js',
-    'src/js/gt.foundation.Foundation.js',
-    'src/js/gt.util.*',
-    'src/js/gt.ui.RowWrapper.js',
-    'src/js/gt.ui.Card.js',
-    'src/js/gt.ui.CardGroup.js',
-    'src/js/gt.ui.AutoAccordionBackground.js',
-    'src/js/gt.ui.AutoAccordionLayer.js',
-    'src/js/gt.ui.AutoAccordionSection.js',
-    'src/js/gt.ui.AutoAccordion.js',
-    'src/js/gt.ui.ImageHotspot.js',
-    'src/js/gt.ui.ImageHotspotGroup.js',
-    'src/js/gt.ui.ThumbnailTab.js',
-    'src/js/gt.ui.ThumbnailTabs.js',
-    'src/js/gt.ui.ImageDetailsListItem.js',
-    'src/js/gt.ui.ImageDetailsList.js',
-    'src/js/gt.ui.Lightbox',
-    'src/js/gt.ui.LightboxLink',
-    'src/js/gt.ui.LightboxLinkGroup',
-    'src/js/gt.ui.TabSection.js',
-    'src/js/gt.ui.Tabs.js',
-    'src/js/gt.*.js'
-    */
-
+    /**
+     * @param {String}
+     * @return {Array}
+     */
     function getBaseJSFiles(srcpath) {
         var files = [
-            'bower_components/gwa-event-dispatcher/dist/Dispatcher.js',
-            'bower_components/colorbox/jquery.colorbox.js',
-
+            srcpath + '/js-vendor/Dispatcher.js',
             srcpath + '/js/gt.foundation.Foundation.js',
             srcpath + '/js/gt.util.*',
             srcpath + '/js/gt.ui.RowWrapper.js'
@@ -51,6 +24,10 @@ module.exports = function(grunt) {
         return files;
     }
 
+    /**
+     * @param {String}
+     * @return {String}
+     */
     function getRequiredJSFilesForModule(mod, srcpath) {
 
         var multimods = {
@@ -59,7 +36,8 @@ module.exports = function(grunt) {
             'ImageHotspot':     ['ImageHotspot', 'ImageHotspotGroup'],
             'ThumbnailTabs':    ['ThumbnailTab', 'ThumbnailTabs'],
             'ImageDetailsList': ['ImageDetailsListItem', 'ImageDetailsList'],
-            'Lightbox':         ['Lightbox', 'LightboxLink', 'LightboxLinkGroup'],
+            'Lightbox':         ['/js-vendor/jquery.colorbox.js', 'Lightbox', 'LightboxLink', 'LightboxLinkGroup'],
+            'Slider':           ['/js-vendor/fotorama.js'],
             'Tabs':             ['TabSection', 'Tabs']
         };
 
@@ -68,13 +46,21 @@ module.exports = function(grunt) {
             multimods[mod].forEach(function(m) {
                 paths.push(getJsPath(m, srcpath));
             });
-            return paths.join('", "');
+            return paths.join('",\n  "');
         }
 
         return getJsPath(mod, srcpath);
     }
 
+    /**
+     * @param {String}
+     * @param {String}
+     * @return {String}
+     */
     function getJsPath(mod, srcpath) {
+        if (mod.indexOf('.js') !== -1) {
+            return srcpath + mod;
+        }
         return srcpath + '/js/gt.ui.' + mod + '.js';
     }
 
@@ -90,6 +76,8 @@ module.exports = function(grunt) {
         // create directory
         grunt.file.mkdir(options.dir);
 
+        // JS --------
+
         var src = '',
             paths = [];
 
@@ -104,10 +92,12 @@ module.exports = function(grunt) {
         });
         src += '[\n';
         src += paths.join(',\n');
-        src += '\n]';
+        src += '\n]\n';
 
         grunt.file.write(options.dir + '/uglify-files.json', src);
         grunt.log.writeln('File "' + options.dir + '/uglify-files.json' + '" created.');
+
+        // SASS --------
 
         src = '';
 

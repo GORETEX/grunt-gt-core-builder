@@ -33,7 +33,9 @@ module.exports = function(grunt) {
       dist: {
           options: {
               modules: [
-                  'CardGroup'
+                  'CardGroup',
+                  'Lightbox',
+                  'Slider'
               ]
           }
       }

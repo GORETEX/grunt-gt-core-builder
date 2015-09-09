@@ -1,8 +1,13 @@
 [
-  "bower_components/gwa-event-dispatcher/dist/Dispatcher.js",
-  "bower_components/colorbox/jquery.colorbox.js",
+  "bower_components/gore-tex-core/dist/src/js-vendor/Dispatcher.js",
   "bower_components/gore-tex-core/dist/src/js/gt.foundation.Foundation.js",
   "bower_components/gore-tex-core/dist/src/js/gt.util.*",
   "bower_components/gore-tex-core/dist/src/js/gt.ui.RowWrapper.js",
-  "bower_components/gore-tex-core/dist/src/js/gt.ui.Card.js", "bower_components/gore-tex-core/dist/src/js/gt.ui.CardGroup.js"
+  "bower_components/gore-tex-core/dist/src/js/gt.ui.Card.js",
+  "bower_components/gore-tex-core/dist/src/js/gt.ui.CardGroup.js",
+  "bower_components/gore-tex-core/dist/src/js-vendor/jquery.colorbox.js",
+  "bower_components/gore-tex-core/dist/src/js/gt.ui.Lightbox.js",
+  "bower_components/gore-tex-core/dist/src/js/gt.ui.LightboxLink.js",
+  "bower_components/gore-tex-core/dist/src/js/gt.ui.LightboxLinkGroup.js",
+  "bower_components/gore-tex-core/dist/src/js-vendor/fotorama.js"
 ]
