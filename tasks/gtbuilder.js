@@ -38,7 +38,8 @@ module.exports = function(grunt) {
             'ImageDetailsList': ['ImageDetailsListItem', 'ImageDetailsList'],
             'Lightbox':         ['/js-vendor/jquery.colorbox.js', 'Lightbox', 'LightboxLink', 'LightboxLinkGroup'],
             'Slider':           ['/js-vendor/fotorama.js', 'Slider'],
-            'Tabs':             ['TabSection', 'Tabs']
+            'Tabs':             ['TabSection', 'Tabs'],
+            'Forms':            ['/js-vendor/parsley.js', 'Forms']
         };
 
         if (multimods.hasOwnProperty(mod)) {
