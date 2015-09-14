@@ -37,7 +37,7 @@ module.exports = function(grunt) {
             'ThumbnailTabs':    ['ThumbnailTab', 'ThumbnailTabs'],
             'ImageDetailsList': ['ImageDetailsListItem', 'ImageDetailsList'],
             'Lightbox':         ['/js-vendor/jquery.colorbox.js', 'Lightbox', 'LightboxLink', 'LightboxLinkGroup'],
-            'Slider':           ['/js-vendor/fotorama.js'],
+            'Slider':           ['/js-vendor/fotorama.js', 'Slider'],
             'Tabs':             ['TabSection', 'Tabs']
         };
 
