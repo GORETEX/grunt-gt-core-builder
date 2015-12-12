@@ -1,7 +1,7 @@
 {
   "name": "grunt-gt-core-builder",
   "description": "Builds required modules for Gore Core projects.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://GORETEX/grunt-gt-core-builder/grunt-plugin-test",
   "author": {
     "name": "Timothy Groves",
