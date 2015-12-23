@@ -40,7 +40,7 @@ module.exports = function(grunt) {
             'Slider':           ['/js-vendor/fotorama.js', 'Slider'],
             'SideBarContent':   ['ToggleContent', 'SideBarContent'],
             'Tabs':             ['TabSection', 'Tabs'],
-            'Forms':            ['/js-vendor/parsley.js', 'Forms']
+            'Forms':            ['/js-vendor/parsley.js', 'Forms'],
             'Tooltip':          ['/js-vendor/tooltipster.js', 'Tooltip']
         };
 
