@@ -41,7 +41,7 @@ module.exports = function(grunt) {
             'SideBarContent':   ['ToggleContent', 'SideBarContent'],
             'Tabs':             ['TabSection', 'Tabs'],
             'Forms':            ['/js-vendor/parsley.js', 'Forms'],
-            'HasTooltip':       ['/js-vendor/tip.js']
+            'HasTooltip':       ['/js-vendor/tip.js', 'HasTooltip']
         };
 
         if (multimods.hasOwnProperty(mod)) {
